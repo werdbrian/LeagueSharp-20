@@ -19,10 +19,7 @@ namespace LittleRedSharpie
         public static Items.Item HDR, BKR, BWC, YOU, DFG, SOD, RO, TMT;
         public static Menu Config;
         private static Obj_AI_Hero Player;
-        public static SpellSlot smiteSlot = SpellSlot.Unknown;
-        public static SpellSlot igniteSlot = SpellSlot.Unknown;
-        public static Spell smite;
-        public static Spell ignite;
+        public static SpellSlot IgniteSlot;
         public static bool ult;
         public SKOJarvanIV()
         {
@@ -32,7 +29,7 @@ namespace LittleRedSharpie
 
             Q = new Spell(SpellSlot.Q, 770f);
             W = new Spell(SpellSlot.W, 525f);
-            E = new Spell(SpellSlot.E, 800f);
+            E = new Spell(SpellSlot.E, 780f);
             R = new Spell(SpellSlot.R, 650f);
 
             Q.SetSkillshot(0.5f, 70, float.MaxValue, false, SkillshotType.SkillshotLine);
@@ -50,7 +47,7 @@ namespace LittleRedSharpie
             DFG = new Items.Item(3128, 750f);
             RO = new Items.Item(3143, 500f);
 
-            igniteSlot = Player.GetSpellSlot("SummonerDot");
+            IgniteSlot = Player.GetSpellSlot("SummonerDot");
 
             Config = new Menu(ChampionName, "SKOJarvanIV", true);
 
@@ -220,6 +217,14 @@ namespace LittleRedSharpie
                     if (target.Health <= Edmg)
                         E.Cast(target);
                 }
+                if (Config.Item("UseIgnite").GetValue<bool>() && IgniteSlot != SpellSlot.Unknown && Player.Spellbook.CanUseSpell(IgniteSlot) == SpellState.Ready)
+                {
+
+                    if (target.Health < igniteDmg)
+                    {
+                        Player.Spellbook.CastSpell(IgniteSlot, target);
+                    }
+                }
             }
         }
             
@@ -241,11 +246,9 @@ namespace LittleRedSharpie
         private static void Farm()
         {
             var allMinionsQ = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Q.Range);
-            var useQl = Config.Item("UseQLane").GetValue<bool>();
-            if (Q.IsReady() && useQl)
+            var fl2 = Q.GetLineFarmLocation(allMinionsQ, Q.Width);
+            if (Q.IsReady())
             {
-                var fl2 = Q.GetLineFarmLocation(allMinionsQ, Q.Width);
-
                 if (fl2.MinionsHit >= 3)
                 {
                     Q.Cast(fl2.Position);
@@ -255,7 +258,7 @@ namespace LittleRedSharpie
                         if (!Orbwalking.InAutoAttackRange(minion) &&
                             minion.Health < 0.75 * Player.GetSpellDamage(minion, SpellSlot.Q))
                             Q.Cast(minion);
-            }
+        }
         }
 
         static void Drawing_OnDraw(EventArgs args)

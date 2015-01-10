@@ -41,8 +41,6 @@ namespace LittleRedSharpie
                     //break;
                 default:
                     break;
-            setSmiteSlot();
-            setIgniteSlot();
             } 
         }
 
