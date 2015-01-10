@@ -246,8 +246,9 @@ namespace LittleRedSharpie
         private static void Farm()
         {
             var allMinionsQ = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Q.Range);
+            var useQ = Config.Item("UseQLane").GetValue<bool>();
             var fl2 = Q.GetLineFarmLocation(allMinionsQ, Q.Width);
-            if (Q.IsReady())
+            if (useQ && Q.IsReady())
             {
                 if (fl2.MinionsHit >= 3)
                 {
