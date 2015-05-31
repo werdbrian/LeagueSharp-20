@@ -2394,8 +2394,8 @@ namespace LeagueSharp.Common
                                         0.6 * (source.BaseAttackDamage + source.FlatPhysicalDamageMod)) +
                                        // Base damage of E
                                        ((buff.Count - 1) *
-                                        (new double[] { 10, 14, 19, 25, 32 }[level] + // Base damage per spear
-                                         new double[] { 0.2, 0.225, 0.25, 0.275, 0.3 }[level] *
+                                        (new double[] { 11, 15, 20, 26, 33 }[level] + // Base damage per spear
+                                         new double[] { 0.21, 0.235, 0.26, 0.285, 0.31 }[level] *
                                          (source.BaseAttackDamage + source.FlatPhysicalDamageMod)));
                                     // Damage multiplier per spear
                             }
