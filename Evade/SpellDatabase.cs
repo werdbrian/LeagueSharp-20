@@ -796,7 +796,7 @@ namespace Evade
                 {
                     ChampionName = "Ekko",
                     SpellName = "EkkoQ",
-                    Slot = SpellSlot.E,
+                    Slot = SpellSlot.Q,
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
                     Range = 951,
@@ -1175,7 +1175,7 @@ namespace Evade
                     IsDangerous = false,
                     MissileSpellName = "GragasQMissile",
                     ExtraDuration = 4500,
-                    ToggleParticleName = "Gragas_",
+                    ToggleParticleName = "Gragas_.+_Q_(Enemy|Ally)",
                     DontCross = true,
                 });
 
@@ -1792,7 +1792,7 @@ namespace Evade
                 {
                     ChampionName = "Leblanc",
                     SpellName = "LeblancSlideM",
-                    Slot = SpellSlot.W,
+                    Slot = SpellSlot.R,
                     Type = SkillShotType.SkillshotCircle,
                     Delay = 0,
                     Range = 600,
@@ -1832,7 +1832,7 @@ namespace Evade
                 {
                     ChampionName = "Leblanc",
                     SpellName = "LeblancSoulShackleM",
-                    Slot = SpellSlot.E,
+                    Slot = SpellSlot.R,
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
                     Range = 950,
@@ -1888,7 +1888,7 @@ namespace Evade
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
                     Range = 905,
-                    Radius = 120,
+                    Radius = 80,
                     MissileSpeed = 2000,
                     FixedRange = true,
                     AddHitbox = true,
@@ -2034,6 +2034,7 @@ namespace Evade
                     MissileSpellName = "lucianrmissileoffhand",
                     ExtraMissileNames = new[] { "lucianrmissile" },
                     DontCheckForDuplicates = true,
+					DisabledByDefault = true,
                 });
 
             #endregion Lucian
@@ -2119,7 +2120,7 @@ namespace Evade
                     IsDangerous = false,
                     MissileSpellName = "LuxLightStrikeKugel",
                     ExtraDuration = 5500,
-                    ToggleParticleName = "LuxLightstrike_tar",
+                    ToggleParticleName = "Lux_.+_E_tar_aoe_",
                     DontCross = true,
                     CanBeRemoved = true,
                     CollisionObjects = new[] { CollisionObjectTypes.YasuoWall },
@@ -2329,10 +2330,7 @@ namespace Evade
                     DangerValue = 2,
                     IsDangerous = false,
                     MissileSpellName = "olafaxethrow",
-                    CanBeRemoved = true,
-                    CollisionObjects =
-                        new[]
-                        { CollisionObjectTypes.Champions, CollisionObjectTypes.Minion, CollisionObjectTypes.YasuoWall },
+                    CanBeRemoved = true,CollisionObjects = new[] { CollisionObjectTypes.YasuoWall }
                 });
 
             #endregion Olaf
