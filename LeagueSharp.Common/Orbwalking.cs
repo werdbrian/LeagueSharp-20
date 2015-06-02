@@ -261,7 +261,7 @@ namespace LeagueSharp.Common
                 return false;
             }
                
-            if (_missileLaunched)
+            if (_missileLaunched && Orbwalker.MissileCheck)
             {
                 return true;
             }
@@ -508,6 +508,9 @@ namespace LeagueSharp.Common
                     new MenuItem("HoldPosRadius", "Hold Position Radius").SetShared().SetValue(new Slider(0, 0, 250)));
                 misc.AddItem(new MenuItem("PriorizeFarm", "Priorize farm over harass").SetShared().SetValue(true));
                 _config.AddSubMenu(misc);
+ 
+                /* Missile check */
+                _config.AddItem(new MenuItem("MissileCheck", "Use Missile Check").SetShared().SetValue(true));
 
 
                 /* Delay sliders */
@@ -545,9 +548,14 @@ namespace LeagueSharp.Common
             private int FarmDelay
             {
                 get { return _config.Item("FarmDelay").GetValue<Slider>().Value; }
+             }
+ 
+            public static bool MissileCheck
+            {
+                get { return _config.Item("MissileCheck").GetValue<bool>(); }
             }
 
-            public OrbwalkingMode ActiveMode
+             public OrbwalkingMode ActiveMode
             {
                 get
                 {
