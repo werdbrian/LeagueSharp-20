@@ -43,7 +43,8 @@ namespace LeagueSharp.Common
 
         public static string _(string textToTranslate)
         {
-            return Translations.ContainsKey(textToTranslate) ? Translations[textToTranslate] : textToTranslate;
+            var textToTranslateToLower = textToTranslate.ToLower();
+            return Translations.ContainsKey(textToTranslateToLower) ? Translations[textToTranslateToLower] : textToTranslate;
         }
       
         public static bool LoadLanguage(string languageName)
