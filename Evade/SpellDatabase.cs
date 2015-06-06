@@ -2693,7 +2693,7 @@ namespace Evade
                     IsDangerous = true,
                     MissileSpellName = "SionEMissile",
                     CollisionObjects =
-                        new[] { CollisionObjectTypes.Champions, CollisionObjectTypes.Minion, CollisionObjectTypes.YasuoWall },
+                        new[] { CollisionObjectTypes.Champions, CollisionObjectTypes.YasuoWall },
                 });
 
             Spells.Add(
@@ -3232,8 +3232,8 @@ namespace Evade
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
                     Range = 1805,
-                    Radius = 72,
-                    MissileSpeed = 1900,
+                    Radius = 75,
+                    MissileSpeed = 1905,
                     FixedRange = true,
                     AddHitbox = true,
                     DangerValue = 2,
@@ -3268,9 +3268,9 @@ namespace Evade
                     Slot = SpellSlot.R,
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
-                    Range = 1200,
-                    Radius = 120,
-                    MissileSpeed = 1950,
+                    Range = 1205,
+                    Radius = 125,
+                    MissileSpeed = 1955,
                     FixedRange = true,
                     AddHitbox = true,
                     DangerValue = 3,
