@@ -287,7 +287,7 @@ namespace Evade
                 new SpellData
                 {
                     ChampionName = "Ashe",
-                    SpellName = "VolleyAttack",
+                    SpellName = "Volley",
                     Slot = SpellSlot.W,
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
@@ -299,9 +299,10 @@ namespace Evade
                     DangerValue = 2,
                     IsDangerous = false,
                     MissileSpellName = "VolleyAttack",
-                    MultipleNumber = 7,
-                    MultipleAngle = 9.58f * (float) Math.PI / 180,
-                    CanBeRemoved = false,
+                    MultipleNumber = 9,
+                    MultipleAngle = 4.62f * (float)Math.PI / 180,
+                    CanBeRemoved = true,
+                    CollisionObjects = new[] { CollisionObjectTypes.Champions, CollisionObjectTypes.YasuoWall, CollisionObjectTypes.Minion }
                 });
 
             Spells.Add(
@@ -939,8 +940,8 @@ namespace Evade
                     Slot = SpellSlot.R,
                     Type = SkillShotType.SkillshotMissileLine,
                     Delay = 250,
-                    Range = 1300,
-                    Radius = 120,
+                    Range = 1350,
+                    Radius = 125,
                     MissileSpeed = 1350,
                     FixedRange = false,
                     AddHitbox = true,
@@ -1177,6 +1178,7 @@ namespace Evade
                     ExtraDuration = 4500,
                     ToggleParticleName = "Gragas_.+_Q_(Enemy|Ally)",
                     DontCross = true,
+					CollisionObjects = new[] { CollisionObjectTypes.YasuoWall, },
                 });
 
             Spells.Add(
@@ -1229,19 +1231,17 @@ namespace Evade
                     ChampionName = "Graves",
                     SpellName = "GravesClusterShot",
                     Slot = SpellSlot.Q,
-                    Type = SkillShotType.SkillshotMissileLine,
+                    Type = SkillShotType.SkillshotCone,
                     Delay = 250,
                     Range = 1000,
-                    Radius = 50,
+                    Radius = 3,
                     MissileSpeed = 2000,
-                    FixedRange = true,
+                    FixedRange = false,
                     AddHitbox = true,
                     DangerValue = 2,
                     IsDangerous = false,
-                    MissileSpellName = "GravesClusterShotAttack",
+                    MissileSpellName = "",
                     CollisionObjects = new[] { CollisionObjectTypes.YasuoWall },
-                    MultipleNumber = 3,
-                    MultipleAngle = 15 * (float) Math.PI / 180,
                 });
 
             Spells.Add(
@@ -1262,7 +1262,7 @@ namespace Evade
                     MissileSpellName = "GravesChargeShotShot",
                     CollisionObjects =
                         new[]
-                        { CollisionObjectTypes.Champions, CollisionObjectTypes.Minion, CollisionObjectTypes.YasuoWall },
+                        { CollisionObjectTypes.YasuoWall },
                 });
 
             #endregion Graves
@@ -2035,6 +2035,7 @@ namespace Evade
                     ExtraMissileNames = new[] { "lucianrmissile" },
                     DontCheckForDuplicates = true,
 					DisabledByDefault = true,
+					CollisionObjects = new[] { CollisionObjectTypes.Champions, CollisionObjectTypes.Minion, CollisionObjectTypes.YasuoWall, },
                 });
 
             #endregion Lucian
@@ -2420,9 +2421,9 @@ namespace Evade
                     SpellName = "OrianaDetonateCommand",
                     Slot = SpellSlot.R,
                     Type = SkillShotType.SkillshotCircle,
-                    Delay = 690,
+                    Delay = 600,
                     Range = 0,
-                    Radius = 410,
+                    Radius = 400,
                     MissileSpeed = int.MaxValue,
                     FixedRange = true,
                     AddHitbox = true,
