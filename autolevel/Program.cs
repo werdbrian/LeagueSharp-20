@@ -263,6 +263,19 @@ namespace AutoLevelup
                 }
             }
             else if (Player.BaseSkinName == "Rumble") abilitySequence = new int[] { 1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
+            else if (Player.BaseSkinName == "RekSai")
+            {
+                if (Smite != SpellSlot.Unknown)
+                {
+                    abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
+                    tipo = " Jungler";
+                }
+                else
+                {
+                    abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
+                    tipo = " Lane";
+                }
+            }
             else if (Player.BaseSkinName == "Ryze") abilitySequence = new int[] { 2, 1, 3, 2, 2, 4, 2, 1, 2, 3, 4, 3, 3, 3, 1, 4, 1, 1 };
             else if (Player.BaseSkinName == "Sejuani") abilitySequence = new int[] { 2, 3, 1, 2, 2, 4, 2, 1, 2, 3, 4, 3, 3, 3, 1, 4, 1, 1 };
             else if (Player.BaseSkinName == "Shaco")
