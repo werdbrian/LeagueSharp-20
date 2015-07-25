@@ -295,7 +295,7 @@ namespace AutoLevelup
             else if (Player.BaseSkinName == "Shyvana") abilitySequence = new int[] { 2, 1, 3, 2, 2, 4, 2, 3, 2, 3, 4, 3, 3, 1, 1, 4, 1, 1 };
             else if (Player.BaseSkinName == "Singed") abilitySequence = new int[] { 1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
             else if (Player.BaseSkinName == "Sion") abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3 };
-            else if (Player.BaseSkinName == "Sivir") abilitySequence = new int[] { 1, 3, 2, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3 };
+            else if (Player.BaseSkinName == "Sivir") abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3 };
             else if (Player.BaseSkinName == "Skarner")
             {
                 if (Smite != SpellSlot.Unknown)
@@ -406,7 +406,7 @@ namespace AutoLevelup
             else if (Player.BaseSkinName == "Zyra") abilitySequence = new int[] { 3, 2, 1, 3, 1, 4, 3, 1, 3, 1, 4, 3, 1, 2, 2, 4, 2, 2 };
 
             Game.OnUpdate += Game_OnUpdate;
-            Game.PrintChat("<font color='#C80046'>AutoLevelup Updated by TimKroket</font>");
+            Game.PrintChat("<font color='#C80046'>AutoLevelup Updated by AAc</font>");
             Game.PrintChat(Player.BaseSkinName + tipo + " loaded");
         }
 
