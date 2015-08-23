@@ -24,8 +24,8 @@ namespace AutoLevelup
 
         private static void bgw_DoWork(object sender, DoWorkEventArgs e)
         {
-            var myUpdater = new Updater("https://raw.githubusercontent.com/DarkAzazel/LeagueSharp/master/AutoLevelup/Version.txt",
-                    "https://raw.githubusercontent.com/DarkAzazel/LeagueSharp/master/AutoLevelup/bin/Release/AutoLevelup.exe", localversion);
+            var myUpdater = new Updater("https://raw.githubusercontent.com/plsfixrito/LeagueSharp/master/AutoLevelup/Version.txt",
+                    "https://raw.githubusercontent.com/plsfixrito/LeagueSharp/master/AutoLevelup/bin/Release/AutoLevelup.exe", localversion);
             if (myUpdater.NeedUpdate)
             {
                 Game.PrintChat("<font color='#33FFFF'> .: AutoLevelup: Updating ...");

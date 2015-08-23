@@ -88,7 +88,7 @@ namespace AutoLevelup
             }
             else if (Player.BaseSkinName == "Ekko") abilitySequence = new int[] { 1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
             else if (Player.BaseSkinName == "FiddleSticks") abilitySequence = new int[] { 2, 3, 1, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3 };
-            else if (Player.BaseSkinName == "Fiora") abilitySequence = new int[] { 3, 1, 2, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2 };
+            else if (Player.BaseSkinName == "Fiora") abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
             else if (Player.BaseSkinName == "Fizz") abilitySequence = new int[] { 1, 3, 2, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2 };
             else if (Player.BaseSkinName == "Galio") abilitySequence = new int[] { 1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
             else if (Player.BaseSkinName == "Gangplank") abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
@@ -431,7 +431,7 @@ namespace AutoLevelup
 
             Game.OnUpdate += Game_OnUpdate;
             Game.PrintChat("<font color='#C80046'>AutoLevelup Updated by AAc</font>");
-            Game.PrintChat(Player.BaseSkinName + tipo + " loaded");
+            Game.PrintChat(Player.BaseSkinName + tipo + " Loaded");
         }
 
         static void Game_OnUpdate(EventArgs args)
