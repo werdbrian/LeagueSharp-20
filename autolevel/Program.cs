@@ -148,7 +148,19 @@ namespace AutoLevelup
                     tipo = " Lane";
                 }
             }
-            else if (Player.ChampionName  == "KogMaw") abilitySequence = new int[] { 2, 3, 1, 2, 3, 4, 2, 3, 2, 3, 4, 2, 3, 1, 1, 4, 1, 1 };
+            else if (Player.ChampionName  == "KogMaw")
+            {
+                if (Heal != SpellSlot.Unknown)
+                {
+                    abilitySequence = new int[] { 2, 1, 3, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3 };
+                    tipo = " AD";
+                }
+                else
+                {
+                    abilitySequence = new int[] { 3, 2, 1, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2 };
+                    tipo = " AP";
+                }
+            }
             else if (Player.ChampionName  == "Leblanc") abilitySequence = new int[] { 1, 2, 3, 1, 1, 4, 1, 2, 1, 3, 4, 3, 3, 3, 2, 4, 2, 2 };
             else if (Player.ChampionName  == "LeeSin")
             {
